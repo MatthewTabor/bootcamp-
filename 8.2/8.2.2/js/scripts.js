@@ -6,5 +6,5 @@ console.log('Nie ma tu nic ciekawego do zobaczenia, ' + name);
 
 /*
 Komentarz blokowy
-no nieźle
+no nieźle - dla mnie git!
 */
