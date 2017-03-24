@@ -1,3 +1,18 @@
-var name = prompt('Wpisz imię');
-alert('Nie ma tu nic ciekawego do zobaczenia, ' + name); //Brakuje komentarzy!
-console.log('Nie ma tu nic ciekawego do zobaczenia, ' + name);
+var femaleNames = ['Asia', 'Kasia', 'Ola', 'Jola'],
+    maleNames = ['Piotrek', 'Marek', 'Arek', 'Jarek'];
+
+
+
+var allNames = maleNames.concat(femaleNames);
+var newName = 'Marian';
+
+
+if(allNames.indexOf(newName) === -1) {
+
+	allNames.push(newName);
+
+  } else {
+
+		console.log('coś nie pykło');
+
+  }
