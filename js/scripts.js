@@ -1,3 +1,6 @@
-var name = prompt('Wpisz imię');
-alert('Nie ma tu nic ciekawego do zobaczenia, ' + name); //Brakuje komentarzy!
-console.log('Nie ma tu nic ciekawego do zobaczenia, ' + name);
+var buttonClass = document.getElementsByClassName('button');
+
+for(var x = 0; x < buttonClass.length; x++) {
+
+	alert(buttonClass.innerText);
+}
