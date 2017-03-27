@@ -1,15 +1,7 @@
-var levelNumber;
-function rysujChoinke(levelNumber) {
 
-	for(var x = 1; x < levelNumber+1; x++) {
+var buttonClass = document.getElementsByClassName('button');
 
-		var star = '';
+for(var x = 0; x < buttonClass.length; x++) {
 
-			for(var n = x; n <= (x*2-1); n++) {
-
-				 star += '*';
-			}
-
-		console.log(star);
-	}
+	alert(buttonClass.innerText);
 }
