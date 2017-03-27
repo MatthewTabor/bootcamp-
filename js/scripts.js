@@ -1,3 +1,15 @@
-var name = prompt('Wpisz imię');
-alert('Nie ma tu nic ciekawego do zobaczenia, ' + name); //Brakuje komentarzy!
-console.log('Nie ma tu nic ciekawego do zobaczenia, ' + name);
+var levelNumber;
+function rysujChoinke(levelNumber) {
+
+	for(var x = 1; x < levelNumber+1; x++) {
+
+		var star = '';
+
+			for(var n = x; n <= (x*2-1); n++) {
+
+				 star += '*';
+			}
+
+		console.log(star);
+	}
+}
