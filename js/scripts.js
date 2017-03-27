@@ -5,7 +5,7 @@ function rysujChoinke(levelNumber) {
 
 		var star = '';
 
-			for(var n = x; n <= (x*2-1); n++) {
+			for(var n = 0; n < (x*2-1); n++) {
 
 				 star += '*';
 			}
