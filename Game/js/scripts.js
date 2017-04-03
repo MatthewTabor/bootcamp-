@@ -46,6 +46,10 @@ function setGameElements() {
 
 		case 'ended':
 			newGameBtn.innerText = 'Jeszcze raz';
+			newGameElem.style.display = 'block';
+			pickElem.style.display = 'none';
+			resultsElem.style.display = 'block';
+		break;
 
 		case 'notStarted':
 		default:
@@ -96,6 +100,8 @@ function playerPick(playerPick) {
 	computerPickElem.innerHTML = computerPick;
 
 	checkRoundWinner(playerPick, computerPick);
+	setGamePoints();
+	checkWinner();
 }
 
 function checkRoundWinner(playerPick, computerPick) {
@@ -130,3 +136,16 @@ function setGamePoints() {
 	computerPointsElem.innerHTML = computer.score;
 }
 		
+function checkWinner() {
+
+	if(player.score == 10) {
+		alert('Gratulacje! Wygrałeś!');
+		gameState = 'ended';
+		setGameElements();
+	} else if(computer.score == 10) {
+		alert('Niestety! Zwycięstwo należy do SI');
+		gameState = 'ended';
+		setGameElements();
+	}
+
+}
