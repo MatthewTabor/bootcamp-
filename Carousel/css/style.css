@@ -58,3 +58,22 @@
 	border-color: ligthgrey;
 	border-radius: 5%;
 }
+
+#indicate {
+	position: absolute;
+	top: 260px;
+	left: 790px;
+}
+
+#indicate li {
+	list-style: circle;
+	float: left;
+	padding: 5px;
+	position-top: 20px;
+	color: #fff;
+
+}
+
+#indicate .active {
+	list-style: disc;
+}
