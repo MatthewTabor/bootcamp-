@@ -25,3 +25,36 @@
 	float: left;
 	list-style: none;
 }
+
+
+.slideBtn  {
+	height: 300px;
+	width: 40px;
+	background-color: transparent;
+	border-width: 0;
+	position: absolute;
+	top: 9px;
+	cursor: pointer;
+}
+
+.leftBtn {
+	left: 639px;
+}
+
+.rightBtn {
+	right: 639px;
+}
+
+.fa {
+	color: black;
+	font-size: 100px;
+}
+
+.resetInt {
+	margin: 10px 0 10px 775px;
+	font-size: 15px;
+	background-color: #222;
+	color: #fff;
+	border-color: ligthgrey;
+	border-radius: 5%;
+}
