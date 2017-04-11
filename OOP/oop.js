@@ -1,23 +1,21 @@
-function Telefon(producent, price, color) {
-	this.producent = producent,
-	this.price = price,
-	this.color = color
+function Button(text) {
+	this.text = text || 'Hello there lazy ass';
 }
 
-Telefon.prototype.printInfo = function() {
-	console.log("Marka telefonu to " + this.producent + ", w kolorze " + this.color + ", w cenie " + this.price ".");
-}
-
-var galaxyS6 = new Telefon("Samsung", 3000, "white");
-var iPhone6s = new Telefon("Apple", 3200, "silver");
-var onePlus = new Telefon("OnePlus", 2200, "black");
-
-Telefon.prototype.turnOn = function() {
-	var determine = this.producent;
-
-	if(determine == "OnePlus") {
-		console.log("Bzzzzt - blue screen of death");
-	} else {
-		console.log(this.producent + " witamy w funkcjonalności");
+Button.prototype = {
+	create: function() {
+		var self = this;
+		this.$element = $('<button>');
+		this.$element.text(this.text);
+		this.$element.click(function() {
+			alert(self.text);
+		});
+		$('body').append(this.$element);
 	}
 }
+
+var btn1 = new Button('Not a lazy ass');
+btn1.create();
+
+var btn2 = new Button();
+btn2.create();
