@@ -6,20 +6,20 @@ $(function(){
         		str += chars[Math.floor(Math.random() * chars.length)];
     		}
     		return str;
+    	}//random string
 	
 	function Column(name) {
 		var self = this; //for nesting purposes	
 		this.id  = randomString();
 		this.name = name;
 		this.$element = createColumn();
-	} //column
 
 	function createColumn() {
-		var $column = $('<div>').addClass('column');
+		var $column = $('<div>').addClass('column col-lg-3');
 		var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
 		var $columnCardList = $('<ul>').addClass('column-card-list');
-		var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-		var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj kartę');
+		var $columnDelete = $('<button>').addClass('btn btn-danger').text('x');
+		var $columnAddCard = $('<button>').addClass('add-card btn btn-success').text('Dodaj kartę');
 	
 		$columnDelete.click(function() {
 			self.removeColumn();
@@ -35,6 +35,7 @@ $(function(){
 
 		return $column;
 	}//createColumn
+	} //column
 	Column.prototype = {
 		addCard: function(card) {
 			this.$element.children('ul').append(card.$element);
@@ -43,7 +44,7 @@ $(function(){
 		removeColumn: function() {
 			this.$element.remove();
 		} //removeColumn
-	}//prototype
+	};//prototype
 	
 	function Card(description) {
 		var self = this;
@@ -51,21 +52,22 @@ $(function(){
 		this.id = randomString();
 		this.description = description;
 		this.$element = createCard();
-	} //card
 
 	function createCard() {
 		var $card = $('<li>').addClass('card');
 		var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-		var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+		var $cardDelete = $('<button>').addClass('btn btn-danger cardRemoval').text('x');
 
 		$cardDelete.click(function(){
 			self.removeCard();
 		});
 
-		$card.append($cardDelete).append($cardDecription);
+		$card.append($cardDelete)
+			.append($cardDescription);
 
 		return $card;
 	}//createCard
+	} //card
 
 	Card.prototype = {
 		removeCard: function() {
@@ -95,7 +97,7 @@ $(function(){
 			board.addColumn(column);
 		});
 
-	};//Board
+	
 
 	//Creating columns
 	var todoColumn = new Column('Do zrobienia');
