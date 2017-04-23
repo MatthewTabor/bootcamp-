@@ -1,29 +1,22 @@
-var tweetLink = "https://twitter.com/intent/tweet?text=";
-var quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=867576&format=jsonp&lang=en&jsonp=?";
+var url = 'https://restcountries.eu/rest/v1/name/';
+var countriesList = $('#countries');
 
-function getQuote() {
-	$.getJSON(quoteUrl, createTweet);
+$('#search').click(searchCountries);
+
+function searchCountries() {
+	var countryName = $('#country-name').val();
+	if(!countryName.length) countryName = 'Poland';
+	$.ajax({
+		url: url + countryName,
+		method: 'GET',
+		success: showCountries
+	});
 }
 
-function createTweet(input) {
-	if(!input.quoteAuthor.length) {
-		input.quoteAuthor = "Unknown author";
-	}// checking terms
-	var tweetText = "Quote of the day - " + input.quoteText + " Author: " + input.quoteAuthor;
-	if(tweetText.length > 140) {
-			getQuote();
-	} else {
-		var tweet = tweetLink + encodeURIComponent(tweetText);
-		$('.quote').text(input.quoteText);
-		$('.author').text("Author: " + input.quoteAuthor);
-		$('.tweet').attr('href', tweet);
-	}
-
+function showCountries(resp) {
+	countriesList.empty();
+	resp.forEach(function(item) {
+		$('<li>').text(item.name).appendTo(countriesList);
+		$('<span>').text(item.capital).appendTo(countriesList);
+	});
 }
-
-$(document).ready(function() {
-	getQuote();
-	$('.quoteRnd').click(function(){
-		getQuote();
-	})
-});
