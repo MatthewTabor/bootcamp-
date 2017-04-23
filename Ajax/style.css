@@ -1,0 +1,27 @@
+.container {
+	background-color: #55acee;
+	margin: 20px auto;
+	padding-bottom: 40px;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+	padding: 20px;
+}
+
+.btn {
+	background-color: #55acee;
+	text-align: center;
+	border-color: #fff;
+	border-width: .1px;
+	width: 100%;
+	margin: 20px auto;
+	font-size: 18px;
+}
+
+
+p {
+	min-height: 200px;
+	color: #fff;
+}
