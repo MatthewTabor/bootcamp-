@@ -1,10 +1,10 @@
 var board = {
 		name: 'Tablica Kanban',
-		addColumn: function(column) {
-			this.$element.append(column.$element);
+		createColumn: function(column) {
+			this.element.append(column.element);
 			initSortable();
 		},//Column
-		$element: $('#board .column-container')
+		element: $('#board .column-container')
 	};
 
 		function initSortable() {
@@ -13,11 +13,6 @@ var board = {
 				placeholder: '.card-placeholder'
 			}).disableSelection();
 		} //initSortable
-
-		//$('.create-column').click(function(){
-		//	var columnName = prompt('Wpisz nazwę kolumny');
-		//	board.createColumn(new Column(columnName));
-		//});
 
 		$('.create-column').click(function(){
 			var columnName = prompt('Wpisz nazwę kolumny');

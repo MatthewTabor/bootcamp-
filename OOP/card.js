@@ -1,23 +1,23 @@
-function Card(description) {
+function Card(id, name) {
 		var self = this;
 
 		this.id = id;
 		this.name = name;
-		this.$element = createCard();
+		this.element = createCard();
 
 	function createCard() {
-		var $card = $('<li>').addClass('card');
-		var $cardDescription = $('<p>').addClass('card-description').text(self.name);
-		var $cardDelete = $('<button>').addClass('btn btn-danger cardRemoval').text('x');
+		var card = $('<li>').addClass('card');
+		var cardDescription = $('<p>').addClass('card-description').text(self.name);
+		var cardDelete = $('<button>').addClass('btn btn-danger cardRemoval').text('x');
 
-		$cardDelete.click(function(){
+		cardDelete.click(function(){
 			self.removeCard();
 		});
 
-		$card.append($cardDelete)
-			.append($cardDescription);
+		card.append(cardDelete)
+			.append(cardDescription);
 
-		return $card;
+		return card;
 	}//createCard
 	} //card
 
