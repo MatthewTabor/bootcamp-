@@ -1,16 +1,7 @@
 $(function(){
-	function randomString() {
-    		var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
-    		var str = '';
-    		for (i = 0; i < 10; i++) {
-        		str += chars[Math.floor(Math.random() * chars.length)];
-    		}
-    		return str;
-    	}//random string
 	
 	function Column(name) {
 		var self = this; //for nesting purposes	
-		this.id  = randomString();
 		this.name = name;
 		this.$element = createColumn();
 
@@ -48,8 +39,6 @@ $(function(){
 	
 	function Card(description) {
 		var self = this;
-
-		this.id = randomString();
 		this.description = description;
 		this.$element = createCard();
 
